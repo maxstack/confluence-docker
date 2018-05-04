@@ -11,5 +11,15 @@ services:
     build: ./confluence
     volumes:
       - confluence_appdata:/var/atlassian/application-data/confluence
+    links:
+      - db
+  db:
+    build: ./postgres 
+    restart: always
+    env_file:
+      - postgres/postgres.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 volumes:
   confluence_appdata:
+  postgres_data:

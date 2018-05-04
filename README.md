@@ -8,7 +8,7 @@ A docker-compose file to build a confluence setup.
 sudo docker-compose up
 ```
 
-If you have made changes to the Dockerfiles you'll need to rebuild before provisoning again
+If you have made changes to the Dockerfiles you'll need to rebuild before provisoning again.
 ```
 sudo docker-compose build && sudo docker-compose up
 ```
@@ -20,5 +20,7 @@ You will need to find and replace all references to example.com to your domain n
 ```
 find ./ -type f -exec sed -i -e 's/example.com/your-domain.com/g' {} \;
 ```
+
+Use postgres/init.sql-sample and postgres/postgres.env-sample as your templates for initialising postgres (copy to a new file without the -sample suffix).
 
 If you rename this project directory you will need to update nginx/confluence.conf to update the proxy_pass parameter to the new container name.
