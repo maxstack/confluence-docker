@@ -1,6 +1,7 @@
 version: "3"
 services:
   web:
+    container_name: confluence_web
     build: ./nginx
     ports:
       - "80:80"
@@ -8,12 +9,14 @@ services:
     links:
       - app
   app:
+    container_name: confluence_app
     build: ./confluence
     volumes:
       - confluence_appdata:/var/atlassian/application-data/confluence
     links:
       - db
   db:
+    container_name: confluence_db
     build: ./postgres 
     restart: always
     env_file:
