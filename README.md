@@ -22,3 +22,7 @@ find ./ -type f -exec sed -i -e 's/example.com/your-domain.com/g' {} \;
 ```
 
 Use postgres/init.sql-sample and postgres/postgres.env-sample as your templates for initialising postgres (copy to a new file without the -sample suffix).
+```
+cp postgres/init.sql-sample postgres/init.sql
+cp postgres/postgres.env-sample postgres/postgres.env
+```
