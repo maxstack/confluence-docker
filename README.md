@@ -21,9 +21,4 @@ You will need to find and replace all references to example.com to your domain n
 find ./ -type f -exec sed -i -e 's/example.com/your-domain.com/g' {} \;
 ```
 
-Create a directory for the confluence application data mount point, currently configured to /var/confluence
-```
-mkdir -p /var/confluence
-```
-
 If you rename this project directory you will need to update nginx/confluence.conf to update the proxy_pass parameter to the new container name.
