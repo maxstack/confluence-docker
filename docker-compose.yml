@@ -10,4 +10,6 @@ services:
   app:
     build: ./confluence
     volumes:
-      - /var/confluence:/var/atlassian/application-data/confluence
+      - confluence_appdata:/var/atlassian/application-data/confluence
+volumes:
+  confluence_appdata:
