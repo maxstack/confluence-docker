@@ -14,6 +14,8 @@ services:
       - confluence_appdata:/var/atlassian/application-data/confluence
     links:
       - db
+    depends_on:
+      - db
   db:
     container_name: confluence_db
     build: ./postgres 
